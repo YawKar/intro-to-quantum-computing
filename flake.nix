@@ -16,6 +16,9 @@
       with pkgs;
       {
         devShells.default = mkShell {
+          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+            pkgs.stdenv.cc.cc
+          ];
           buildInputs = [
             python312
             poetry
