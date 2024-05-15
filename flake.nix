@@ -16,12 +16,14 @@
       with pkgs;
       {
         devShells.default = mkShell {
-          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-            pkgs.stdenv.cc.cc
+          LD_LIBRARY_PATH = lib.makeLibraryPath [
+            stdenv.cc.cc
+	    zlib
           ];
           buildInputs = [
             python312
             poetry
+	    zlib
           ];
           shellHook = ''
             export PS1="(intro-quantum)$PS1"
