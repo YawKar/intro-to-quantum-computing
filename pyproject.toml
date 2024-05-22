@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 matplotlib = "^3.8.4"
 numpy = "^1.26.4"
+qutip = "^5.0.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -16,3 +17,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pyright]
 reportUnknownMemberType = false
+typeCheckingMode = "strict"
+verboseOutput = true
+
